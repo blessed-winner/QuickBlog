@@ -47,7 +47,7 @@ const Dashboard = () => {
               <img src={assets.dashboard_icon_4} alt="" />
               <p>Latest Blogs</p>
            </div>
-           <div className='bg-white max-w-4xl scrollbar-hide rounded-lg overflow-x-auto shadow'>
+           <div className='relative bg-white max-w-4xl scrollbar-hide rounded-lg overflow-x-auto shadow'>
                 <table className='w-full text-gray-500 text-sm'>
                   <thead className='text-gray-600 uppercase text-left text-xs'>
                     <tr>
@@ -60,7 +60,7 @@ const Dashboard = () => {
                     </thead>
                   <tbody>
                       {dashboardData.recentBlogs.map((blog,index)=>(
-                         <BlogTableData key={blog._id} blog={blog}/>
+                         <BlogTableData key={blog._id} blog={blog} index={index + 1}/>
                       ))}
                   </tbody>
                 </table>
