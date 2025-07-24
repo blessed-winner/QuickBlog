@@ -1,93 +1,54 @@
 # 📝 QuickBlog
 
-A modern, feature-rich blogging platform built with React and Vite. QuickBlog offers a sleek, responsive frontend for readers and a powerful admin dashboard for content management. The project is currently frontend-only, using static data, but is structured for easy backend integration in the future.
+A modern, full-stack blogging platform with a sleek React frontend and a robust Node.js/Express/MongoDB backend. QuickBlog is designed for easy content creation, management, and sharing.
 
 ---
 
-## ✨ Features at a Glance
+## 📦 Project Structure
 
-| Feature                | Status      |
-|-----------------------|-------------|
-| Responsive UI         | ✅ Implemented |
-| Blog Feed & Reading   | ✅ Implemented |
-| Comment System        | ✅ Implemented |
-| Newsletter Signup     | ✅ Implemented |
-| Social Sharing        | ✅ Implemented |
-| Admin Dashboard       | ✅ Implemented |
-| Blog CRUD (Admin)     | ✅ Implemented |
-| Rich Text Editor      | ✅ Implemented |
-| Analytics Overview    | ✅ Implemented |
-| AI Blog Generation    | 🚧 Planned    |
-| Backend Integration   | 🚧 Planned    |
-| User Authentication   | 🚧 Planned    |
-| Advanced Analytics    | 🚧 Planned    |
-| SEO Enhancements      | 🚧 Planned    |
-| Post Search/Filtering | 🚧 Planned    |
+- `client/` — [Frontend (React)](client/README.md)
+- `server/` — [Backend (Node.js/Express)](server/README.md)
 
 ---
 
+## ✨ Key Features
 
-
-## 🏗️ Project Structure & Highlights
-
-- **Frontend**: React 19 + Vite for blazing-fast development
-- **Styling**: Tailwind CSS for modern, responsive design
-- **Routing**: React Router v7
-- **Rich Text Editing**: Quill editor for blog creation
-- **Admin Dashboard**: Analytics, blog management, comment moderation
-- **Comment System**: Readers can add/view comments on posts
-- **Newsletter**: Simple signup for updates
-- **Social Sharing**: Share posts on Facebook, Twitter, Google+
-- **Static Data**: Uses local dummy data for blogs/comments (no backend yet)
+- Responsive, modern UI (React + Tailwind)
+- Blog feed, reading, and social sharing
+- Admin dashboard for blog management
+- Rich text editor for blog creation
+- JWT-based admin authentication
+- MongoDB for persistent storage
+- Image upload support (ImageKit)
 
 ---
 
-## 🚀 Getting Started
-
-### Prerequisites
-- [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
-
-### Installation & Running
+## 🚀 Quick Start
 
 1. **Clone the repository:**
     ```sh
     git clone https://github.com/blessed-winner/QuickBlog.git
     ```
-2. **Navigate to the client directory:**
-    ```sh
-    cd QuickBlog/client
-    ```
-3. **Install dependencies:**
-    ```sh
-    npm install
-    ```
-4. **Run the development server:**
-    ```sh
-    npm run dev
-    ```
-    The app will be available at `http://localhost:5173` (or another port if 5173 is busy).
-
-### Accessing the Admin Panel
-- Go to `http://localhost:5173/admin` to access the admin dashboard.
-- *Note: Authentication is not yet implemented; admin features are accessible by default.*
+2. **See [client/README.md](client/README.md) for frontend setup.**
+3. **See [server/README.md](server/README.md) for backend setup.**
 
 ---
 
-## 🔮 Roadmap & Future Plans
-- **Backend Integration**: Node.js, Express, MongoDB (MERN stack)
-- **User Authentication & Roles**: Secure login for Admin, Editor, User
-- **AI Blog Generation**: Use AI to help generate blog content
-- **Advanced Analytics**: More detailed stats and visualizations
-- **SEO & Performance**: Improve search engine visibility
-- **Search & Filtering**: Powerful tools for readers to find content
+## 🔮 Roadmap
+- Full blog CRUD API
+- Comment and newsletter backend
+- User authentication and roles
+- AI blog generation
+- Advanced analytics
+- SEO enhancements
+- Search/filtering
 
 ---
 
 ## 🤝 Contributing
-Contributions are welcome! Please fork the repo, create a feature branch, and open a pull request. See the [CONTRIBUTING](CONTRIBUTING.md) guidelines for more details.
+Contributions are welcome! Please fork the repo, create a feature branch, and open a pull request.
 
 ---
 
 ## 📄 License
-Distributed under the MIT License. See `LICENSE` for more information.
+Distributed under the MIT License. See `LICENSE` for more information. 
