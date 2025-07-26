@@ -10,7 +10,7 @@ export const adminLogin = async(req,res) => {
         return res.json({ success:false,message:'Invalid admin credentials' })
      }
 
-     const token = await jwt.sign({email},process.env.JWT_SECRET)
+     const token = await jwt.sign({email},process.env.JWT_SECRET,{expiresIn:'1m'})
      return res.json({success:true,token})
     }
     catch(err){
