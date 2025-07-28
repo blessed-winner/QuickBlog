@@ -2,6 +2,7 @@ import imageKit from "../Configs/imageKit.js"
 import fs from 'fs'
 import Blog from "../models/Blog.js"
 import Comment from "../models/Comment.js"
+import axios from 'axios'
 
 
 export const addBlog = async(req,res)=>{
@@ -122,4 +123,43 @@ export const getBlogComments = async(req,res) => {
         return res.json({success:false,message:err.message})
     }
 }
+
+export const generateResponse = async (req, res) => {
+  try {
+    const { prompt } = req.body;
+
+    if (!prompt) {
+      return res.status(400).json({ success: false, message: "Prompt is required" });
+    }
+
+    const cohereResponse = await axios.post(
+      "https://api.cohere.ai/v1/generate",
+      {
+        model: "command", // You can also use "command-light" if you're on a free/cheaper plan
+        prompt: `${prompt} Generate a blog content for this topic in simple text format.`,
+        max_tokens: 300,
+        temperature: 0.7,
+        k: 0,
+        p: 0.75,
+        frequency_penalty: 0,
+        presence_penalty: 0,
+        stop_sequences: [],
+        return_likelihoods: "NONE",
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${process.env.COHERE_API_KEY}`,
+          "Content-Type": "application/json",
+        },
+      }
+    );
+
+    const content = cohereResponse.data.generations[0]?.text?.trim() || "";
+
+    return res.json({ success: true, content });
+  } catch (err) {
+    console.error("Cohere error:", err.response?.data || err.message);
+    return res.status(500).json({ success: false, message: "Failed to generate content." });
+  }
+};
 

@@ -1,16 +1,24 @@
 import React, { useEffect, useState } from 'react'
 import { assets, dashboard_data } from '../../assets/assets'
 import BlogTableData from '../../components/admin/BlogTableData'
+import { useAppContext } from '../../context/AppContext'
+import toast from 'react-hot-toast'
 
 const Dashboard = () => {
+  const{axios} = useAppContext()
   const [dashboardData,setDashboardData] = useState({
     blogs:0,
     comments:0,
     drafts:0,
     recentBlogs:[]
   })
-  const fetchDashboard = () => {
-    setDashboardData(dashboard_data)
+  const fetchDashboard = async() => {
+    try {
+      const{data} = await axios.get('/api/admin/dashboard')
+      data.success ? setDashboardData(data.dashboardData) : toast.error(data.message)
+    } catch (err) {
+      toast.error(err.message)
+    }
   }
   useEffect(()=>{
      fetchDashboard()
@@ -22,7 +30,7 @@ const Dashboard = () => {
               <img src={assets.dashboard_icon_1} alt="" />
               <div>
                 <p className='font-semibold text-xl text-gray-600'>{dashboardData.blogs}</p>
-                <p className='text-gray-400 font-light'>Blogs</p>
+                <p className='text-gray-400 font-light'>{dashboardData.blogs === 1 ? 'Blog' : 'Blogs'}</p>
               </div>
               </div>
 
@@ -30,7 +38,7 @@ const Dashboard = () => {
               <img src={assets.dashboard_icon_2} alt="" />
               <div>
                 <p className='font-semibold text-xl text-gray-600'>{dashboardData.comments}</p>
-                <p className='text-gray-400 font-light'>Comments</p>
+                <p className='text-gray-400 font-light'>{dashboardData.comments === 1 ? 'Comment' :'Comments'}</p>
               </div>
               </div>
 
@@ -38,7 +46,7 @@ const Dashboard = () => {
               <img src={assets.dashboard_icon_3} alt="" />
               <div>
                 <p className='font-semibold text-xl text-gray-600'>{dashboardData.drafts}</p>
-                <p className='text-gray-400 font-light'>Drafts</p>
+                <p className='text-gray-400 font-light'>{dashboardData.drafts === 1 ? 'Draft' :'Drafts'}</p>
               </div>
               </div>
         </div>

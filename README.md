@@ -17,9 +17,12 @@ A modern, full-stack blogging platform with a sleek React frontend and a robust 
 - Blog feed, reading, and social sharing
 - Admin dashboard for blog management
 - Rich text editor for blog creation
+- **AI-powered blog content generation (Cohere API)**
 - JWT-based admin authentication
 - MongoDB for persistent storage
 - Image upload support (ImageKit)
+- **Comment system with moderation**
+- **Newsletter signup (frontend only, no backend integration yet)**
 
 ---
 
@@ -35,13 +38,16 @@ A modern, full-stack blogging platform with a sleek React frontend and a robust 
 ---
 
 ## 🔮 Roadmap
-- Full blog CRUD API
-- Comment and newsletter backend
-- User authentication and roles
-- AI blog generation
-- Advanced analytics
-- SEO enhancements
-- Search/filtering
+- [x] Full blog CRUD API
+- [x] Comment backend & moderation
+- [x] AI blog generation
+- [x] Admin dashboard
+- [x] Image upload
+- [ ] Newsletter backend & email delivery
+- [ ] User authentication and roles (beyond admin)
+- [ ] Advanced analytics
+- [ ] SEO enhancements
+- [ ] Search/filtering
 
 ---
 

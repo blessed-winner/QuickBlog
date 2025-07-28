@@ -1,5 +1,7 @@
 # 📝 QuickBlog Backend
 
+# 📝 QuickBlog Backend
+
 This is the backend API for QuickBlog, providing authentication, blog management, and integration with MongoDB and ImageKit. Built with Node.js, Express, and Mongoose.
 
 ---

@@ -1,5 +1,4 @@
 import { assets } from '../assets/assets'
-import { useNavigate } from 'react-router-dom'
 import { useAppContext } from '../context/AppContext'
 
 const Navbar = () => {

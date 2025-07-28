@@ -8,12 +8,13 @@ This is the frontend application for QuickBlog, a modern, feature-rich blogging 
 
 - **Responsive UI**: Works on all devices
 - **Blog Feed & Reading**: Browse and read blog posts
-- **Comment System**: Readers can add/view comments (frontend only)
-- **Newsletter Signup**: Simple signup for updates (frontend only)
+- **Comment System**: Readers can add/view comments (requires backend for persistence & moderation)
+- **Newsletter Signup**: Simple signup form (frontend only, no backend/email delivery yet)
 - **Social Sharing**: Share posts on Facebook, Twitter, Google+
 - **Admin Dashboard**: Analytics, blog management, comment moderation
 - **Blog CRUD (Admin)**: Create, edit, and delete blogs (UI only; backend required for persistence)
 - **Rich Text Editor**: Quill editor for blog creation
+- **AI Blog Generation**: Generate blog content using Cohere AI (requires backend)
 - **Analytics Overview**: View blog stats (dummy data)
 
 ---
@@ -52,7 +53,7 @@ This is the frontend application for QuickBlog, a modern, feature-rich blogging 
 
 ### Accessing the Admin Panel
 - Go to `http://localhost:5173/admin` to access the admin dashboard.
-- *Note: Admin features require backend API for full functionality.*
+- *Note: Admin features, comments, and AI blog generation require backend API for full functionality.*
 
 ---
 

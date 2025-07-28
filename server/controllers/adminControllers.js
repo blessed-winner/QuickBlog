@@ -10,7 +10,7 @@ export const adminLogin = async(req,res) => {
         return res.json({ success:false,message:'Invalid admin credentials' })
      }
 
-     const token = await jwt.sign({email},process.env.JWT_SECRET,{expiresIn:'1m'})
+     const token = await jwt.sign({email},process.env.JWT_SECRET,{expiresIn:'1d'})
      return res.json({success:true,token})
     }
     catch(err){
@@ -77,6 +77,20 @@ export const updateCommentById = async(req,res) => {
     }
     catch(err){
         return res.json({success:false,message:err.message})
+    }
+}
+
+export const approveComment = async(req,res) => {
+    try{
+        const{id} = req.body
+        const comment = await Comment.findById(id)
+
+        comment.isApproved = !comment.isApproved
+        await comment.save()
+        return res.json({success:true,message:'Comment status updated'})
+    }
+    catch(err){
+        return res.json({success,message:err.message})
     }
 }
 
